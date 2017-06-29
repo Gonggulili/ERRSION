@@ -26,20 +26,20 @@ div_event=0;
 dic=1;
 
 for monte=1:1:Monte 
-%     div=zeros(1,N);
-%     for u=1:1:U %----------------wsc
-%         q(u,:)=randQAMsymbols(QAMtype,N);
-%         t(u,:)=1/sqrt(N)*fft(q(u,:));
-%     end
-%     
-    
-    for u=1:1:U  %----------------gy
-        trBlk = randi([0,1],TrBlkSizes,1);
-        cw = lteULSCH(ue,pusch,trBlk );
-        puschSym(u,:) = ltePUSCH(ue,pusch,cw);
-        N1 = length(puschSym(u,:));
-        t(u,:)=1/sqrt(N1)*fft(puschSym(u,:));
+    div=zeros(1,N);
+    for u=1:1:U %----------------wsc
+        q(u,:)=randQAMsymbols(QAMtype,N);
+        t(u,:)=1/sqrt(N)*fft(q(u,:));
     end
+    
+    
+%     for u=1:1:U  %----------------gy
+%         trBlk = randi([0,1],TrBlkSizes,1);
+%         cw = lteULSCH(ue,pusch,trBlk );
+%         puschSym(u,:) = ltePUSCH(ue,pusch,cw);
+%         N1 = length(puschSym(u,:));
+%         t(u,:)=1/sqrt(N1)*fft(puschSym(u,:));
+%     end
     
      div=zeros(1,N1);%----gy
     
